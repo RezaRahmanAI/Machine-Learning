@@ -1,2 +1,1 @@
-# Machine-Learning
-It's a Machine Learning Tutorial file
+edit config file that is provided in the git
