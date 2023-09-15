@@ -2,8 +2,8 @@ number: '0123456789'
 symbol: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ €"
 lang_char: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 experiment_name: 'en_filtered'
-train_data: 'all_data'
-valid_data: 'all_data/en_val'
+train_data: './trainer/all_data/en_val'
+valid_data: './trainer/all_data/en_val'
 manualSeed: 1111
 workers: 6
 batch_size: 32 #32
@@ -19,7 +19,7 @@ eps: 0.00000001
 grad_clip: 5
 #Data processing
 #select_data: 'en_train_filtered'
-select_data: 'all_data/en_val'# this is dataset folder in train_data
+select_data: './trainer/all_data/en_val'# this is dataset folder in train_data
 batch_ratio: '1' 
 total_data_usage_ratio: 1.0
 batch_max_length: 34 

@@ -1,0 +1,44 @@
+number: '০১২৩৪৫৬৭৮৯'
+symbol: "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ €"
+lang_char: 'অআইঈউঊঋএঐওঔকখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহ়ািীুূৃেৈোৌ্ৎৗড়ঢ়য়০১২৩৪৫৬৭৮৯'
+experiment_name: 'bn_number_plate'
+train_data: './trainer/all_data/en_filtered'
+valid_data: './trainer/all_data/en_filtered'
+manualSeed: 1111
+workers: 6
+batch_size: 32
+num_iter: 100  # Adjust based on your dataset and training time
+valInterval: 20  # Adjust based on your dataset and training time
+saved_model: ''  # Path to a saved model for transfer learning (if applicable)
+FT: False
+optim: 'adam'  # Use 'adam' for faster convergence, 'adadelta' is also an option
+lr: 0.0001  # Learning rate, adjust based on training progress
+beta1: 0.9
+rho: 0.95
+eps: 1e-8
+grad_clip: 5
+# Data processing
+select_data: './trainer/all_data/en_filtered'  # Adjust as needed
+batch_ratio: '1'  # Adjust as needed
+total_data_usage_ratio: 1.0
+batch_max_length: 34  # Adjust based on your dataset
+imgH: 64  # Adjust based on typical image heights
+imgW: 800  # Adjust based on typical image widths
+rgb: False  # Set to True if your images are in color
+contrast_adjust: 0.0  # Adjust for image contrast augmentation
+sensitive: True
+PAD: True
+data_filtering_off: False
+# Model Architecture
+Transformation: 'None'  # You can experiment with transformations like 'tps', 'tps-grid', etc.
+FeatureExtraction: 'ResNet'  # Consider using a more powerful feature extraction model
+SequenceModeling: 'BiLSTM'
+Prediction: 'CTC'
+num_fiducial: 20
+input_channel: 1  # Set to 1 for grayscale images, 3 for RGB
+output_channel: 512  # Increase for more expressive power
+hidden_size: 256  # Adjust as needed
+decode: 'greedy'
+new_prediction: False
+freeze_FeatureExtraction: False
+freeze_SequenceModeling: False
